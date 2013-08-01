@@ -96,7 +96,7 @@ The `isLoaded` property tells if the image is already loaded or not.
 
 ### Credits
 
-The framework is developed by (@simonbs)[http://twitter.com/simonbs]. Feel free to fork the repository and send pull requests if you have made something awesome.
+The framework is developed by [@simonbs](http://twitter.com/simonbs), [simonbs.dk](http://simonbs.dk) Feel free to fork the repository and send pull requests if you have made something awesome.
 
 ### License
 
