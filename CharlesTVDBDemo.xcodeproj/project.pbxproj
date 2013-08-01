@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7227F2B817AB05D200C27EFA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7227F2B717AB05D200C27EFA /* Cocoa.framework */; };
+		7227F2C217AB05D200C27EFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7227F2C017AB05D200C27EFA /* InfoPlist.strings */; };
+		7227F2C417AB05D200C27EFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2C317AB05D200C27EFA /* main.m */; };
+		7227F2C817AB05D200C27EFA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7227F2C617AB05D200C27EFA /* Credits.rtf */; };
+		7227F2CB17AB05D200C27EFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2CA17AB05D200C27EFA /* AppDelegate.m */; };
+		7227F2CE17AB05D300C27EFA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7227F2CC17AB05D300C27EFA /* MainMenu.xib */; };
+		7227F2EF17AB05EC00C27EFA /* NSString+Charles.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2D717AB05EC00C27EFA /* NSString+Charles.m */; };
+		7227F2F017AB05EC00C27EFA /* NSURL+Charles.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2D917AB05EC00C27EFA /* NSURL+Charles.m */; };
+		7227F2F117AB05EC00C27EFA /* CharlesClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2DB17AB05EC00C27EFA /* CharlesClient.m */; };
+		7227F2F217AB05EC00C27EFA /* CharlesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2DF17AB05EC00C27EFA /* CharlesRequest.m */; };
+		7227F2F317AB05EC00C27EFA /* CharlesArtwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2E317AB05EC00C27EFA /* CharlesArtwork.m */; };
+		7227F2F417AB05EC00C27EFA /* CharlesEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2E517AB05EC00C27EFA /* CharlesEpisode.m */; };
+		7227F2F517AB05EC00C27EFA /* CharlesLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2E717AB05EC00C27EFA /* CharlesLanguage.m */; };
+		7227F2F617AB05EC00C27EFA /* CharlesSeason.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2E917AB05EC00C27EFA /* CharlesSeason.m */; };
+		7227F2F717AB05EC00C27EFA /* CharlesTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2EB17AB05EC00C27EFA /* CharlesTVSeries.m */; };
+		7227F2F817AB05EC00C27EFA /* CharlesTVSeriesDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227F2ED17AB05EC00C27EFA /* CharlesTVSeriesDetails.m */; };
+		9E24368C47AA4CB9AB124AFC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9493918823A34EEFB5E79457 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7227F2B417AB05D200C27EFA /* CharlesTVDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharlesTVDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7227F2B717AB05D200C27EFA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7227F2BA17AB05D200C27EFA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7227F2BB17AB05D200C27EFA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7227F2BC17AB05D200C27EFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7227F2BF17AB05D200C27EFA /* CharlesTVDBDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CharlesTVDBDemo-Info.plist"; sourceTree = "<group>"; };
+		7227F2C117AB05D200C27EFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7227F2C317AB05D200C27EFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7227F2C517AB05D200C27EFA /* CharlesTVDBDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CharlesTVDBDemo-Prefix.pch"; sourceTree = "<group>"; };
+		7227F2C717AB05D200C27EFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7227F2C917AB05D200C27EFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7227F2CA17AB05D200C27EFA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7227F2CD17AB05D300C27EFA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7227F2D617AB05EC00C27EFA /* NSString+Charles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Charles.h"; sourceTree = "<group>"; };
+		7227F2D717AB05EC00C27EFA /* NSString+Charles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Charles.m"; sourceTree = "<group>"; };
+		7227F2D817AB05EC00C27EFA /* NSURL+Charles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Charles.h"; sourceTree = "<group>"; };
+		7227F2D917AB05EC00C27EFA /* NSURL+Charles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Charles.m"; sourceTree = "<group>"; };
+		7227F2DA17AB05EC00C27EFA /* CharlesClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesClient.h; sourceTree = "<group>"; };
+		7227F2DB17AB05EC00C27EFA /* CharlesClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesClient.m; sourceTree = "<group>"; };
+		7227F2DD17AB05EC00C27EFA /* CharlesModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesModels.h; sourceTree = "<group>"; };
+		7227F2DE17AB05EC00C27EFA /* CharlesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesRequest.h; sourceTree = "<group>"; };
+		7227F2DF17AB05EC00C27EFA /* CharlesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesRequest.m; sourceTree = "<group>"; };
+		7227F2E017AB05EC00C27EFA /* CharlesTVDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVDB.h; sourceTree = "<group>"; };
+		7227F2E217AB05EC00C27EFA /* CharlesArtwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesArtwork.h; sourceTree = "<group>"; };
+		7227F2E317AB05EC00C27EFA /* CharlesArtwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesArtwork.m; sourceTree = "<group>"; };
+		7227F2E417AB05EC00C27EFA /* CharlesEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesEpisode.h; sourceTree = "<group>"; };
+		7227F2E517AB05EC00C27EFA /* CharlesEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesEpisode.m; sourceTree = "<group>"; };
+		7227F2E617AB05EC00C27EFA /* CharlesLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesLanguage.h; sourceTree = "<group>"; };
+		7227F2E717AB05EC00C27EFA /* CharlesLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesLanguage.m; sourceTree = "<group>"; };
+		7227F2E817AB05EC00C27EFA /* CharlesSeason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesSeason.h; sourceTree = "<group>"; };
+		7227F2E917AB05EC00C27EFA /* CharlesSeason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesSeason.m; sourceTree = "<group>"; };
+		7227F2EA17AB05EC00C27EFA /* CharlesTVSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVSeries.h; sourceTree = "<group>"; };
+		7227F2EB17AB05EC00C27EFA /* CharlesTVSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTVSeries.m; sourceTree = "<group>"; };
+		7227F2EC17AB05EC00C27EFA /* CharlesTVSeriesDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVSeriesDetails.h; sourceTree = "<group>"; };
+		7227F2ED17AB05EC00C27EFA /* CharlesTVSeriesDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTVSeriesDetails.m; sourceTree = "<group>"; };
+		7508803A93864C40894354B9 /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		9493918823A34EEFB5E79457 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7227F2B117AB05D200C27EFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7227F2B817AB05D200C27EFA /* Cocoa.framework in Frameworks */,
+				9E24368C47AA4CB9AB124AFC /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7227F2AB17AB05D200C27EFA = {
+			isa = PBXGroup;
+			children = (
+				7227F2BD17AB05D200C27EFA /* CharlesTVDBDemo */,
+				7227F2B617AB05D200C27EFA /* Frameworks */,
+				7227F2B517AB05D200C27EFA /* Products */,
+				7508803A93864C40894354B9 /* Pods/Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		7227F2B517AB05D200C27EFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2B417AB05D200C27EFA /* CharlesTVDBDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7227F2B617AB05D200C27EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2B717AB05D200C27EFA /* Cocoa.framework */,
+				7227F2B917AB05D200C27EFA /* Other Frameworks */,
+				9493918823A34EEFB5E79457 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7227F2B917AB05D200C27EFA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2BA17AB05D200C27EFA /* AppKit.framework */,
+				7227F2BB17AB05D200C27EFA /* CoreData.framework */,
+				7227F2BC17AB05D200C27EFA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7227F2BD17AB05D200C27EFA /* CharlesTVDBDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2D417AB05EC00C27EFA /* CharlesTVDB */,
+				7227F2C917AB05D200C27EFA /* AppDelegate.h */,
+				7227F2CA17AB05D200C27EFA /* AppDelegate.m */,
+				7227F2CC17AB05D300C27EFA /* MainMenu.xib */,
+				7227F2BE17AB05D200C27EFA /* Supporting Files */,
+			);
+			path = CharlesTVDBDemo;
+			sourceTree = "<group>";
+		};
+		7227F2BE17AB05D200C27EFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2BF17AB05D200C27EFA /* CharlesTVDBDemo-Info.plist */,
+				7227F2C017AB05D200C27EFA /* InfoPlist.strings */,
+				7227F2C317AB05D200C27EFA /* main.m */,
+				7227F2C517AB05D200C27EFA /* CharlesTVDBDemo-Prefix.pch */,
+				7227F2C617AB05D200C27EFA /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7227F2D417AB05EC00C27EFA /* CharlesTVDB */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2D517AB05EC00C27EFA /* Categories */,
+				7227F2E117AB05EC00C27EFA /* Models */,
+				7227F2DA17AB05EC00C27EFA /* CharlesClient.h */,
+				7227F2DB17AB05EC00C27EFA /* CharlesClient.m */,
+				7227F2DD17AB05EC00C27EFA /* CharlesModels.h */,
+				7227F2DE17AB05EC00C27EFA /* CharlesRequest.h */,
+				7227F2DF17AB05EC00C27EFA /* CharlesRequest.m */,
+				7227F2E017AB05EC00C27EFA /* CharlesTVDB.h */,
+			);
+			path = CharlesTVDB;
+			sourceTree = SOURCE_ROOT;
+		};
+		7227F2D517AB05EC00C27EFA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2D617AB05EC00C27EFA /* NSString+Charles.h */,
+				7227F2D717AB05EC00C27EFA /* NSString+Charles.m */,
+				7227F2D817AB05EC00C27EFA /* NSURL+Charles.h */,
+				7227F2D917AB05EC00C27EFA /* NSURL+Charles.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7227F2E117AB05EC00C27EFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7227F2E217AB05EC00C27EFA /* CharlesArtwork.h */,
+				7227F2E317AB05EC00C27EFA /* CharlesArtwork.m */,
+				7227F2E417AB05EC00C27EFA /* CharlesEpisode.h */,
+				7227F2E517AB05EC00C27EFA /* CharlesEpisode.m */,
+				7227F2E617AB05EC00C27EFA /* CharlesLanguage.h */,
+				7227F2E717AB05EC00C27EFA /* CharlesLanguage.m */,
+				7227F2E817AB05EC00C27EFA /* CharlesSeason.h */,
+				7227F2E917AB05EC00C27EFA /* CharlesSeason.m */,
+				7227F2EA17AB05EC00C27EFA /* CharlesTVSeries.h */,
+				7227F2EB17AB05EC00C27EFA /* CharlesTVSeries.m */,
+				7227F2EC17AB05EC00C27EFA /* CharlesTVSeriesDetails.h */,
+				7227F2ED17AB05EC00C27EFA /* CharlesTVSeriesDetails.m */,
+				7227F2EE17AB05EC00C27EFA /* Collections */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7227F2EE17AB05EC00C27EFA /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7227F2B317AB05D200C27EFA /* CharlesTVDBDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7227F2D117AB05D300C27EFA /* Build configuration list for PBXNativeTarget "CharlesTVDBDemo" */;
+			buildPhases = (
+				6902A719351A41D5BEC9F289 /* Check Pods Manifest.lock */,
+				7227F2B017AB05D200C27EFA /* Sources */,
+				7227F2B117AB05D200C27EFA /* Frameworks */,
+				7227F2B217AB05D200C27EFA /* Resources */,
+				BBFF6AEBB0C74F409B08F818 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CharlesTVDBDemo;
+			productName = CharlesTVDBDemo;
+			productReference = 7227F2B417AB05D200C27EFA /* CharlesTVDBDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7227F2AC17AB05D200C27EFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = intuitaps;
+			};
+			buildConfigurationList = 7227F2AF17AB05D200C27EFA /* Build configuration list for PBXProject "CharlesTVDBDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7227F2AB17AB05D200C27EFA;
+			productRefGroup = 7227F2B517AB05D200C27EFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7227F2B317AB05D200C27EFA /* CharlesTVDBDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7227F2B217AB05D200C27EFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7227F2C217AB05D200C27EFA /* InfoPlist.strings in Resources */,
+				7227F2C817AB05D200C27EFA /* Credits.rtf in Resources */,
+				7227F2CE17AB05D300C27EFA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6902A719351A41D5BEC9F289 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BBFF6AEBB0C74F409B08F818 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7227F2B017AB05D200C27EFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7227F2C417AB05D200C27EFA /* main.m in Sources */,
+				7227F2CB17AB05D200C27EFA /* AppDelegate.m in Sources */,
+				7227F2EF17AB05EC00C27EFA /* NSString+Charles.m in Sources */,
+				7227F2F017AB05EC00C27EFA /* NSURL+Charles.m in Sources */,
+				7227F2F117AB05EC00C27EFA /* CharlesClient.m in Sources */,
+				7227F2F217AB05EC00C27EFA /* CharlesRequest.m in Sources */,
+				7227F2F317AB05EC00C27EFA /* CharlesArtwork.m in Sources */,
+				7227F2F417AB05EC00C27EFA /* CharlesEpisode.m in Sources */,
+				7227F2F517AB05EC00C27EFA /* CharlesLanguage.m in Sources */,
+				7227F2F617AB05EC00C27EFA /* CharlesSeason.m in Sources */,
+				7227F2F717AB05EC00C27EFA /* CharlesTVSeries.m in Sources */,
+				7227F2F817AB05EC00C27EFA /* CharlesTVSeriesDetails.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7227F2C017AB05D200C27EFA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7227F2C117AB05D200C27EFA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7227F2C617AB05D200C27EFA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7227F2C717AB05D200C27EFA /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7227F2CC17AB05D300C27EFA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7227F2CD17AB05D300C27EFA /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7227F2CF17AB05D300C27EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7227F2D017AB05D300C27EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7227F2D217AB05D300C27EFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7508803A93864C40894354B9 /* Pods/Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CharlesTVDBDemo/CharlesTVDBDemo-Prefix.pch";
+				INFOPLIST_FILE = "CharlesTVDBDemo/CharlesTVDBDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7227F2D317AB05D300C27EFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7508803A93864C40894354B9 /* Pods/Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CharlesTVDBDemo/CharlesTVDBDemo-Prefix.pch";
+				INFOPLIST_FILE = "CharlesTVDBDemo/CharlesTVDBDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7227F2AF17AB05D200C27EFA /* Build configuration list for PBXProject "CharlesTVDBDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7227F2CF17AB05D300C27EFA /* Debug */,
+				7227F2D017AB05D300C27EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7227F2D117AB05D300C27EFA /* Build configuration list for PBXNativeTarget "CharlesTVDBDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7227F2D217AB05D300C27EFA /* Debug */,
+				7227F2D317AB05D300C27EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7227F2AC17AB05D200C27EFA /* Project object */;
+}

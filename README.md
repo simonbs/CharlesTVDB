@@ -1,23 +1,20 @@
 # CharlesTVDB
 
-CharlesTVDB is a block based framework for OS X which provides an interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
+CharlesTVDB is a collection of classes for OS X which provides a block based interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
 
 ### Installation
 First and foremost you have to clone the repository. You probably already know how to do this.
 
 	git clone https://github.com/simonbs/CharlesTVDB.git
 	
-Next, you have to install the dependencies using CocoaPods. If you don't already have CocoaPods installed, you will have to [install it first](http://cocoapods.org).
-
-	pod install
-
-This will install [AFKissXMLRequestOperation](https://github.com/AFNetworking/AFKissXMLRequestOperation) and its dependencies: [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [KissXML](https://github.com/robbiehanson/KissXML)
-
-Now, build the framework and grab it from the products directory and drag it into your own project. Remember to select "Copy items into destination group's folder (if needed)" if it is not already checked.
+Copy the `CharlesTVDB/` directory into your project.
+	
+Next, you have to install the dependencies. CharlesTVDB needs [AFKissXMLRequestOperation](https://github.com/AFNetworking/AFKissXMLRequestOperation) which then again needs [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [KissXML](https://github.com/robbiehanson/KissXML), so that's a total of three dependencies.
+However, if you just add `pod 'AFKissXMLRequestOperation'` to your Podfile then the two other dependencies will automatically be installed.
 
 Now you just need to import the header.  You can do this in the prefix header.
 
-	#import <CharlesTVDB/CharlesTVDB.h>
+	#import "CharlesTVDB"
 
 You're ready to use CharlesTVDB!
 
@@ -102,7 +99,7 @@ The `isLoaded` property tells if the image is already loaded or not.
 
 ### Credits
 
-The framework is developed by [@simonbs](http://twitter.com/simonbs), [simonbs.dk](http://simonbs.dk) Feel free to fork the repository and send pull requests if you have made something awesome.
+CharlesTVDB is developed by [@simonbs](http://twitter.com/simonbs), [simonbs.dk](http://simonbs.dk) Feel free to fork the repository and send pull requests if you have made something awesome.
 
 ### License
 

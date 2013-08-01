@@ -11,6 +11,8 @@
 #import "NSURL+Charles.h"
 #import "NSString+Charles.h"
 
+#define CharlesAPIBaseUrl @"http://thetvdb.com/api/"
+
 @implementation CharlesRequest
 
 #pragma mark -

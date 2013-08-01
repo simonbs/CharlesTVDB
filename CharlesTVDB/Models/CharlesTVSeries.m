@@ -14,6 +14,8 @@
 #import "CharlesArtwork.h"
 #import "CharlesTVSeriesDetails.h"
 
+#define CharlesBannersBaseUrl @"http://www.thetvdb.com/banners/"
+
 @implementation CharlesTVSeries
 
 #pragma mark -
