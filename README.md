@@ -13,7 +13,13 @@ Next, you have to install the dependencies using CocoaPods. If you don't already
 
 This will install [AFKissXMLRequestOperation](https://github.com/AFNetworking/AFKissXMLRequestOperation) and its dependencies: [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [KissXML](https://github.com/robbiehanson/KissXML)
 
-Now, build the framework and grab it from the products directory and drag it into your own project. You're ready to use CharlesTVDB!
+Now, build the framework and grab it from the products directory and drag it into your own project. Remember to select "Copy items into destination group's folder (if needed)" if it is not already checked.
+
+Now you just need to import the header.  You can do this in the prefix header.
+
+	#import <CharlesTVDB/CharlesTVDB.h>
+
+You're ready to use CharlesTVDB!
 
 ### Usage
 
