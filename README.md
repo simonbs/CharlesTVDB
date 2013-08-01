@@ -1,6 +1,6 @@
 # CharlesTVDB
 
-CharlesTVDB is a block based framework for OS X which provides interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
+CharlesTVDB is a block based framework for OS X which provides an interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
 
 ### Installation
 First and foremost you have to clone the repository. You probably already know how to do this.
