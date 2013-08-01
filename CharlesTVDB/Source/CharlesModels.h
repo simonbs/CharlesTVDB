@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 intuitaps. All rights reserved.
 //
 
-#import "CharlesTVSeriesCollection.h"
 #import "CharlesLanguage.h"
 #import "CharlesTVSeries.h"
 #import "CharlesSeason.h"

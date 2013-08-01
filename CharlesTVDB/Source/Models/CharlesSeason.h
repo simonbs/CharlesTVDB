@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class CharlesTVSeries, CharlesEpisodeCollection;
+@class CharlesTVSeries;
 
 @interface CharlesSeason : NSObject
 

@@ -20,15 +20,6 @@
 		721C5E7B17A4143C004DC839 /* CharlesLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C5E7717A4143C004DC839 /* CharlesLanguage.m */; };
 		721C5E7E17A4144E004DC839 /* CharlesTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E7C17A4144E004DC839 /* CharlesTVSeries.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		721C5E7F17A4144E004DC839 /* CharlesTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C5E7D17A4144E004DC839 /* CharlesTVSeries.m */; };
-		72AE02A117A5830E00078CE2 /* CharlesCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029A17A5830E00078CE2 /* CharlesCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72AE02A217A5830E00078CE2 /* CharlesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE029B17A5830E00078CE2 /* CharlesCollection.m */; };
-		72AE02A317A5830E00078CE2 /* CharlesCollectionPrivateInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029C17A5830E00078CE2 /* CharlesCollectionPrivateInterface.h */; settings = {ATTRIBUTES = (); }; };
-		72AE02A417A5830E00078CE2 /* CharlesSeasonCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029D17A5830E00078CE2 /* CharlesSeasonCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72AE02A517A5830E00078CE2 /* CharlesSeasonCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE029E17A5830E00078CE2 /* CharlesSeasonCollection.m */; };
-		72AE02A617A5830E00078CE2 /* CharlesTVSeriesCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029F17A5830E00078CE2 /* CharlesTVSeriesCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72AE02A717A5830E00078CE2 /* CharlesTVSeriesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02A017A5830E00078CE2 /* CharlesTVSeriesCollection.m */; };
-		72AE02AA17A5832900078CE2 /* CharlesEpisodeCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE02A817A5832900078CE2 /* CharlesEpisodeCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72AE02AB17A5832900078CE2 /* CharlesEpisodeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02A917A5832900078CE2 /* CharlesEpisodeCollection.m */; };
 		72AE02AE17A5839500078CE2 /* CharlesSeason.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE02AC17A5839500078CE2 /* CharlesSeason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72AE02AF17A5839500078CE2 /* CharlesSeason.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02AD17A5839500078CE2 /* CharlesSeason.m */; };
 		72AE02B217A5839E00078CE2 /* CharlesEpisode.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE02B017A5839E00078CE2 /* CharlesEpisode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -240,16 +231,11 @@
 				721C5E7E17A4144E004DC839 /* CharlesTVSeries.h in Headers */,
 				72AE02AE17A5839500078CE2 /* CharlesSeason.h in Headers */,
 				72AE02B217A5839E00078CE2 /* CharlesEpisode.h in Headers */,
-				72AE02A417A5830E00078CE2 /* CharlesSeasonCollection.h in Headers */,
-				72AE02A617A5830E00078CE2 /* CharlesTVSeriesCollection.h in Headers */,
-				72AE02AA17A5832900078CE2 /* CharlesEpisodeCollection.h in Headers */,
-				72AE02A117A5830E00078CE2 /* CharlesCollection.h in Headers */,
 				72F3D88317A8DE0A0034A84D /* CharlesArtwork.h in Headers */,
 				72F3D88717A8E35A0034A84D /* CharlesTVSeriesDetails.h in Headers */,
 				721C5E5D17A4085C004DC839 /* CharlesConstants.h in Headers */,
 				721C5E7817A4143C004DC839 /* NSURL+Charles.h in Headers */,
 				72AE02B617A588BA00078CE2 /* CharlesRequest.h in Headers */,
-				72AE02A317A5830E00078CE2 /* CharlesCollectionPrivateInterface.h in Headers */,
 				72F3D87F17A8DCDE0034A84D /* NSString+Charles.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,10 +342,6 @@
 				721C5E7917A4143C004DC839 /* NSURL+Charles.m in Sources */,
 				721C5E7B17A4143C004DC839 /* CharlesLanguage.m in Sources */,
 				721C5E7F17A4144E004DC839 /* CharlesTVSeries.m in Sources */,
-				72AE02A217A5830E00078CE2 /* CharlesCollection.m in Sources */,
-				72AE02A517A5830E00078CE2 /* CharlesSeasonCollection.m in Sources */,
-				72AE02A717A5830E00078CE2 /* CharlesTVSeriesCollection.m in Sources */,
-				72AE02AB17A5832900078CE2 /* CharlesEpisodeCollection.m in Sources */,
 				72AE02AF17A5839500078CE2 /* CharlesSeason.m in Sources */,
 				72AE02B317A5839E00078CE2 /* CharlesEpisode.m in Sources */,
 				72AE02B717A588BA00078CE2 /* CharlesRequest.m in Sources */,
