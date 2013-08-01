@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		721C5E2817A3FD3C004DC839 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 721C5E2717A3FD3C004DC839 /* Cocoa.framework */; };
+		721C5E3217A3FD3C004DC839 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 721C5E3017A3FD3C004DC839 /* InfoPlist.strings */; };
+		721C5E4617A3FE38004DC839 /* CharlesTVDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E4417A3FE38004DC839 /* CharlesTVDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		721C5E5417A40329004DC839 /* CharlesClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E5217A40329004DC839 /* CharlesClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		721C5E5517A40329004DC839 /* CharlesClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C5E5317A40329004DC839 /* CharlesClient.m */; };
+		721C5E5D17A4085C004DC839 /* CharlesConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E5C17A4085C004DC839 /* CharlesConstants.h */; };
+		721C5E6917A40D3D004DC839 /* CharlesModels.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E6817A40D3D004DC839 /* CharlesModels.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		721C5E7817A4143C004DC839 /* NSURL+Charles.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E7317A4143C004DC839 /* NSURL+Charles.h */; };
+		721C5E7917A4143C004DC839 /* NSURL+Charles.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C5E7417A4143C004DC839 /* NSURL+Charles.m */; };
+		721C5E7A17A4143C004DC839 /* CharlesLanguage.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E7617A4143C004DC839 /* CharlesLanguage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		721C5E7B17A4143C004DC839 /* CharlesLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C5E7717A4143C004DC839 /* CharlesLanguage.m */; };
+		721C5E7E17A4144E004DC839 /* CharlesTVSeries.h in Headers */ = {isa = PBXBuildFile; fileRef = 721C5E7C17A4144E004DC839 /* CharlesTVSeries.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		721C5E7F17A4144E004DC839 /* CharlesTVSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C5E7D17A4144E004DC839 /* CharlesTVSeries.m */; };
+		72AE02A117A5830E00078CE2 /* CharlesCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029A17A5830E00078CE2 /* CharlesCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AE02A217A5830E00078CE2 /* CharlesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE029B17A5830E00078CE2 /* CharlesCollection.m */; };
+		72AE02A317A5830E00078CE2 /* CharlesCollectionPrivateInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029C17A5830E00078CE2 /* CharlesCollectionPrivateInterface.h */; settings = {ATTRIBUTES = (); }; };
+		72AE02A417A5830E00078CE2 /* CharlesSeasonCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029D17A5830E00078CE2 /* CharlesSeasonCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AE02A517A5830E00078CE2 /* CharlesSeasonCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE029E17A5830E00078CE2 /* CharlesSeasonCollection.m */; };
+		72AE02A617A5830E00078CE2 /* CharlesTVSeriesCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE029F17A5830E00078CE2 /* CharlesTVSeriesCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AE02A717A5830E00078CE2 /* CharlesTVSeriesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02A017A5830E00078CE2 /* CharlesTVSeriesCollection.m */; };
+		72AE02AA17A5832900078CE2 /* CharlesEpisodeCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE02A817A5832900078CE2 /* CharlesEpisodeCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AE02AB17A5832900078CE2 /* CharlesEpisodeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02A917A5832900078CE2 /* CharlesEpisodeCollection.m */; };
+		72AE02AE17A5839500078CE2 /* CharlesSeason.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE02AC17A5839500078CE2 /* CharlesSeason.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AE02AF17A5839500078CE2 /* CharlesSeason.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02AD17A5839500078CE2 /* CharlesSeason.m */; };
+		72AE02B217A5839E00078CE2 /* CharlesEpisode.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE02B017A5839E00078CE2 /* CharlesEpisode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72AE02B317A5839E00078CE2 /* CharlesEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02B117A5839E00078CE2 /* CharlesEpisode.m */; };
+		72AE02B617A588BA00078CE2 /* CharlesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 72AE02B417A588B900078CE2 /* CharlesRequest.h */; settings = {ATTRIBUTES = (); }; };
+		72AE02B717A588BA00078CE2 /* CharlesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AE02B517A588B900078CE2 /* CharlesRequest.m */; };
+		72AF6A7B17A8F38E007ACB09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AF6A7A17A8F38E007ACB09 /* SystemConfiguration.framework */; };
+		72F3D87F17A8DCDE0034A84D /* NSString+Charles.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3D87D17A8DCDE0034A84D /* NSString+Charles.h */; };
+		72F3D88017A8DCDE0034A84D /* NSString+Charles.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3D87E17A8DCDE0034A84D /* NSString+Charles.m */; };
+		72F3D88317A8DE0A0034A84D /* CharlesArtwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3D88117A8DE0A0034A84D /* CharlesArtwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72F3D88417A8DE0A0034A84D /* CharlesArtwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3D88217A8DE0A0034A84D /* CharlesArtwork.m */; };
+		72F3D88717A8E35A0034A84D /* CharlesTVSeriesDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F3D88517A8E35A0034A84D /* CharlesTVSeriesDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72F3D88817A8E35A0034A84D /* CharlesTVSeriesDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F3D88617A8E35A0034A84D /* CharlesTVSeriesDetails.m */; };
+		A9AD6494B63D48F3B2E65F3C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF54B8016A994AF4B4E3DEF2 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		58FD83D808664BEE9F59CCAF /* Pods/Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		721C5E2417A3FD3C004DC839 /* CharlesTVDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CharlesTVDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		721C5E2717A3FD3C004DC839 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		721C5E2A17A3FD3C004DC839 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		721C5E2B17A3FD3C004DC839 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		721C5E2C17A3FD3C004DC839 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		721C5E2F17A3FD3C004DC839 /* CharlesTVDB-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CharlesTVDB-Info.plist"; sourceTree = "<group>"; };
+		721C5E3117A3FD3C004DC839 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		721C5E3317A3FD3C004DC839 /* CharlesTVDB-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CharlesTVDB-Prefix.pch"; sourceTree = "<group>"; };
+		721C5E4417A3FE38004DC839 /* CharlesTVDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVDB.h; sourceTree = "<group>"; };
+		721C5E5217A40329004DC839 /* CharlesClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesClient.h; sourceTree = "<group>"; };
+		721C5E5317A40329004DC839 /* CharlesClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesClient.m; sourceTree = "<group>"; };
+		721C5E5C17A4085C004DC839 /* CharlesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesConstants.h; sourceTree = "<group>"; };
+		721C5E6817A40D3D004DC839 /* CharlesModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesModels.h; sourceTree = "<group>"; };
+		721C5E7317A4143C004DC839 /* NSURL+Charles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Charles.h"; sourceTree = "<group>"; };
+		721C5E7417A4143C004DC839 /* NSURL+Charles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Charles.m"; sourceTree = "<group>"; };
+		721C5E7617A4143C004DC839 /* CharlesLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesLanguage.h; sourceTree = "<group>"; };
+		721C5E7717A4143C004DC839 /* CharlesLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesLanguage.m; sourceTree = "<group>"; };
+		721C5E7C17A4144E004DC839 /* CharlesTVSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVSeries.h; sourceTree = "<group>"; };
+		721C5E7D17A4144E004DC839 /* CharlesTVSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTVSeries.m; sourceTree = "<group>"; };
+		72AE029A17A5830E00078CE2 /* CharlesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesCollection.h; sourceTree = "<group>"; };
+		72AE029B17A5830E00078CE2 /* CharlesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesCollection.m; sourceTree = "<group>"; };
+		72AE029C17A5830E00078CE2 /* CharlesCollectionPrivateInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesCollectionPrivateInterface.h; sourceTree = "<group>"; };
+		72AE029D17A5830E00078CE2 /* CharlesSeasonCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesSeasonCollection.h; sourceTree = "<group>"; };
+		72AE029E17A5830E00078CE2 /* CharlesSeasonCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesSeasonCollection.m; sourceTree = "<group>"; };
+		72AE029F17A5830E00078CE2 /* CharlesTVSeriesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVSeriesCollection.h; sourceTree = "<group>"; };
+		72AE02A017A5830E00078CE2 /* CharlesTVSeriesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTVSeriesCollection.m; sourceTree = "<group>"; };
+		72AE02A817A5832900078CE2 /* CharlesEpisodeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesEpisodeCollection.h; sourceTree = "<group>"; };
+		72AE02A917A5832900078CE2 /* CharlesEpisodeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesEpisodeCollection.m; sourceTree = "<group>"; };
+		72AE02AC17A5839500078CE2 /* CharlesSeason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesSeason.h; sourceTree = "<group>"; };
+		72AE02AD17A5839500078CE2 /* CharlesSeason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesSeason.m; sourceTree = "<group>"; };
+		72AE02B017A5839E00078CE2 /* CharlesEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesEpisode.h; sourceTree = "<group>"; };
+		72AE02B117A5839E00078CE2 /* CharlesEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesEpisode.m; sourceTree = "<group>"; };
+		72AE02B417A588B900078CE2 /* CharlesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesRequest.h; sourceTree = "<group>"; };
+		72AE02B517A588B900078CE2 /* CharlesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesRequest.m; sourceTree = "<group>"; };
+		72AF6A7A17A8F38E007ACB09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		72F3D87D17A8DCDE0034A84D /* NSString+Charles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Charles.h"; sourceTree = "<group>"; };
+		72F3D87E17A8DCDE0034A84D /* NSString+Charles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Charles.m"; sourceTree = "<group>"; };
+		72F3D88117A8DE0A0034A84D /* CharlesArtwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesArtwork.h; sourceTree = "<group>"; };
+		72F3D88217A8DE0A0034A84D /* CharlesArtwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesArtwork.m; sourceTree = "<group>"; };
+		72F3D88517A8E35A0034A84D /* CharlesTVSeriesDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVSeriesDetails.h; sourceTree = "<group>"; };
+		72F3D88617A8E35A0034A84D /* CharlesTVSeriesDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTVSeriesDetails.m; sourceTree = "<group>"; };
+		FF54B8016A994AF4B4E3DEF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		721C5E2017A3FD3C004DC839 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72AF6A7B17A8F38E007ACB09 /* SystemConfiguration.framework in Frameworks */,
+				721C5E2817A3FD3C004DC839 /* Cocoa.framework in Frameworks */,
+				A9AD6494B63D48F3B2E65F3C /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		721C5E1A17A3FD3C004DC839 = {
+			isa = PBXGroup;
+			children = (
+				721C5E2D17A3FD3C004DC839 /* CharlesTVDB */,
+				721C5E2617A3FD3C004DC839 /* Frameworks */,
+				721C5E2517A3FD3C004DC839 /* Products */,
+				58FD83D808664BEE9F59CCAF /* Pods/Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		721C5E2517A3FD3C004DC839 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				721C5E2417A3FD3C004DC839 /* CharlesTVDB.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		721C5E2617A3FD3C004DC839 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72AF6A7A17A8F38E007ACB09 /* SystemConfiguration.framework */,
+				721C5E2717A3FD3C004DC839 /* Cocoa.framework */,
+				721C5E2917A3FD3C004DC839 /* Other Frameworks */,
+				FF54B8016A994AF4B4E3DEF2 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		721C5E2917A3FD3C004DC839 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				721C5E2A17A3FD3C004DC839 /* AppKit.framework */,
+				721C5E2B17A3FD3C004DC839 /* CoreData.framework */,
+				721C5E2C17A3FD3C004DC839 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		721C5E2D17A3FD3C004DC839 /* CharlesTVDB */ = {
+			isa = PBXGroup;
+			children = (
+				721C5E4317A3FE38004DC839 /* Source */,
+				721C5E2E17A3FD3C004DC839 /* Supporting Files */,
+			);
+			path = CharlesTVDB;
+			sourceTree = "<group>";
+		};
+		721C5E2E17A3FD3C004DC839 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				721C5E2F17A3FD3C004DC839 /* CharlesTVDB-Info.plist */,
+				721C5E3017A3FD3C004DC839 /* InfoPlist.strings */,
+				721C5E3317A3FD3C004DC839 /* CharlesTVDB-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		721C5E4317A3FE38004DC839 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				721C5E5C17A4085C004DC839 /* CharlesConstants.h */,
+				721C5E4417A3FE38004DC839 /* CharlesTVDB.h */,
+				721C5E6817A40D3D004DC839 /* CharlesModels.h */,
+				721C5E5217A40329004DC839 /* CharlesClient.h */,
+				721C5E5317A40329004DC839 /* CharlesClient.m */,
+				72AE02B417A588B900078CE2 /* CharlesRequest.h */,
+				72AE02B517A588B900078CE2 /* CharlesRequest.m */,
+				721C5E7217A4143C004DC839 /* Categories */,
+				721C5E7517A4143C004DC839 /* Models */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		721C5E7217A4143C004DC839 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				721C5E7317A4143C004DC839 /* NSURL+Charles.h */,
+				721C5E7417A4143C004DC839 /* NSURL+Charles.m */,
+				72F3D87D17A8DCDE0034A84D /* NSString+Charles.h */,
+				72F3D87E17A8DCDE0034A84D /* NSString+Charles.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		721C5E7517A4143C004DC839 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72AE029917A5830E00078CE2 /* Collections */,
+				721C5E7617A4143C004DC839 /* CharlesLanguage.h */,
+				721C5E7717A4143C004DC839 /* CharlesLanguage.m */,
+				721C5E7C17A4144E004DC839 /* CharlesTVSeries.h */,
+				721C5E7D17A4144E004DC839 /* CharlesTVSeries.m */,
+				72AE02AC17A5839500078CE2 /* CharlesSeason.h */,
+				72AE02AD17A5839500078CE2 /* CharlesSeason.m */,
+				72AE02B017A5839E00078CE2 /* CharlesEpisode.h */,
+				72AE02B117A5839E00078CE2 /* CharlesEpisode.m */,
+				72F3D88117A8DE0A0034A84D /* CharlesArtwork.h */,
+				72F3D88217A8DE0A0034A84D /* CharlesArtwork.m */,
+				72F3D88517A8E35A0034A84D /* CharlesTVSeriesDetails.h */,
+				72F3D88617A8E35A0034A84D /* CharlesTVSeriesDetails.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		72AE029917A5830E00078CE2 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				72AE029C17A5830E00078CE2 /* CharlesCollectionPrivateInterface.h */,
+				72AE029A17A5830E00078CE2 /* CharlesCollection.h */,
+				72AE029B17A5830E00078CE2 /* CharlesCollection.m */,
+				72AE029F17A5830E00078CE2 /* CharlesTVSeriesCollection.h */,
+				72AE02A017A5830E00078CE2 /* CharlesTVSeriesCollection.m */,
+				72AE029D17A5830E00078CE2 /* CharlesSeasonCollection.h */,
+				72AE029E17A5830E00078CE2 /* CharlesSeasonCollection.m */,
+				72AE02A817A5832900078CE2 /* CharlesEpisodeCollection.h */,
+				72AE02A917A5832900078CE2 /* CharlesEpisodeCollection.m */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		721C5E2117A3FD3C004DC839 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				721C5E4617A3FE38004DC839 /* CharlesTVDB.h in Headers */,
+				721C5E5417A40329004DC839 /* CharlesClient.h in Headers */,
+				721C5E6917A40D3D004DC839 /* CharlesModels.h in Headers */,
+				721C5E7A17A4143C004DC839 /* CharlesLanguage.h in Headers */,
+				721C5E7E17A4144E004DC839 /* CharlesTVSeries.h in Headers */,
+				72AE02AE17A5839500078CE2 /* CharlesSeason.h in Headers */,
+				72AE02B217A5839E00078CE2 /* CharlesEpisode.h in Headers */,
+				72AE02A417A5830E00078CE2 /* CharlesSeasonCollection.h in Headers */,
+				72AE02A617A5830E00078CE2 /* CharlesTVSeriesCollection.h in Headers */,
+				72AE02AA17A5832900078CE2 /* CharlesEpisodeCollection.h in Headers */,
+				72AE02A117A5830E00078CE2 /* CharlesCollection.h in Headers */,
+				72F3D88317A8DE0A0034A84D /* CharlesArtwork.h in Headers */,
+				72F3D88717A8E35A0034A84D /* CharlesTVSeriesDetails.h in Headers */,
+				721C5E5D17A4085C004DC839 /* CharlesConstants.h in Headers */,
+				721C5E7817A4143C004DC839 /* NSURL+Charles.h in Headers */,
+				72AE02B617A588BA00078CE2 /* CharlesRequest.h in Headers */,
+				72AE02A317A5830E00078CE2 /* CharlesCollectionPrivateInterface.h in Headers */,
+				72F3D87F17A8DCDE0034A84D /* NSString+Charles.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		721C5E2317A3FD3C004DC839 /* CharlesTVDB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 721C5E3917A3FD3C004DC839 /* Build configuration list for PBXNativeTarget "CharlesTVDB" */;
+			buildPhases = (
+				63B50350B99046C8AA069BDC /* Check Pods Manifest.lock */,
+				721C5E1F17A3FD3C004DC839 /* Sources */,
+				721C5E2017A3FD3C004DC839 /* Frameworks */,
+				721C5E2117A3FD3C004DC839 /* Headers */,
+				721C5E2217A3FD3C004DC839 /* Resources */,
+				52CEE72BAFDB48268F4E523F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CharlesTVDB;
+			productName = CharlesTVDB;
+			productReference = 721C5E2417A3FD3C004DC839 /* CharlesTVDB.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		721C5E1B17A3FD3C004DC839 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = intuitaps;
+			};
+			buildConfigurationList = 721C5E1E17A3FD3C004DC839 /* Build configuration list for PBXProject "CharlesTVDB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 721C5E1A17A3FD3C004DC839;
+			productRefGroup = 721C5E2517A3FD3C004DC839 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				721C5E2317A3FD3C004DC839 /* CharlesTVDB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		721C5E2217A3FD3C004DC839 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				721C5E3217A3FD3C004DC839 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52CEE72BAFDB48268F4E523F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63B50350B99046C8AA069BDC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		721C5E1F17A3FD3C004DC839 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				721C5E5517A40329004DC839 /* CharlesClient.m in Sources */,
+				721C5E7917A4143C004DC839 /* NSURL+Charles.m in Sources */,
+				721C5E7B17A4143C004DC839 /* CharlesLanguage.m in Sources */,
+				721C5E7F17A4144E004DC839 /* CharlesTVSeries.m in Sources */,
+				72AE02A217A5830E00078CE2 /* CharlesCollection.m in Sources */,
+				72AE02A517A5830E00078CE2 /* CharlesSeasonCollection.m in Sources */,
+				72AE02A717A5830E00078CE2 /* CharlesTVSeriesCollection.m in Sources */,
+				72AE02AB17A5832900078CE2 /* CharlesEpisodeCollection.m in Sources */,
+				72AE02AF17A5839500078CE2 /* CharlesSeason.m in Sources */,
+				72AE02B317A5839E00078CE2 /* CharlesEpisode.m in Sources */,
+				72AE02B717A588BA00078CE2 /* CharlesRequest.m in Sources */,
+				72F3D88017A8DCDE0034A84D /* NSString+Charles.m in Sources */,
+				72F3D88417A8DE0A0034A84D /* CharlesArtwork.m in Sources */,
+				72F3D88817A8E35A0034A84D /* CharlesTVSeriesDetails.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		721C5E3017A3FD3C004DC839 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				721C5E3117A3FD3C004DC839 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		721C5E3717A3FD3C004DC839 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		721C5E3817A3FD3C004DC839 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		721C5E3A17A3FD3C004DC839 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58FD83D808664BEE9F59CCAF /* Pods/Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CharlesTVDB/CharlesTVDB-Prefix.pch";
+				INFOPLIST_FILE = "CharlesTVDB/CharlesTVDB-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		721C5E3B17A3FD3C004DC839 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58FD83D808664BEE9F59CCAF /* Pods/Pods.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CharlesTVDB/CharlesTVDB-Prefix.pch";
+				INFOPLIST_FILE = "CharlesTVDB/CharlesTVDB-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		721C5E1E17A3FD3C004DC839 /* Build configuration list for PBXProject "CharlesTVDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				721C5E3717A3FD3C004DC839 /* Debug */,
+				721C5E3817A3FD3C004DC839 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		721C5E3917A3FD3C004DC839 /* Build configuration list for PBXNativeTarget "CharlesTVDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				721C5E3A17A3FD3C004DC839 /* Debug */,
+				721C5E3B17A3FD3C004DC839 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 721C5E1B17A3FD3C004DC839 /* Project object */;
+}

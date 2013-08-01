@@ -1,0 +1,26 @@
+//
+//  CharlesEpisode.h
+//  CharlesTVDB
+//
+//  Created by Simon Støvring on 28/07/13.
+//  Copyright (c) 2013 intuitaps. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@class CharlesSeason;
+
+@interface CharlesEpisode : NSObject
+
+@property (nonatomic, readonly) NSNumber *identifier;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSNumber *episodeNumber;
+@property (nonatomic, readonly) NSNumber *seasonNumber;
+@property (nonatomic, readonly) NSString *overview;
+@property (nonatomic, readonly) NSArray *writers;
+@property (nonatomic, readonly) NSArray *directors;
+@property (nonatomic, readonly) NSArray *guestStars;
+@property (nonatomic, readonly) NSDate *firstAired;
+@property (nonatomic, readonly, weak) CharlesSeason *season;
+
+@end
