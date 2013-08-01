@@ -13,7 +13,7 @@
 @interface CharlesSeason : NSObject
 
 @property (nonatomic, readonly) NSNumber *seasonNumber;
-@property (nonatomic, readonly) CharlesEpisodeCollection *episodes;
+@property (nonatomic, readonly) NSArray *episodes;
 @property (nonatomic, readonly, weak) CharlesTVSeries *tvSeries;
 
 @end

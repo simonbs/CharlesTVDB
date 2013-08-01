@@ -7,16 +7,12 @@
 //
 
 #import "CharlesTVSeries.h"
-#import "CharlesCollectionPrivateInterface.h"
 #import "CharlesRequest.h"
-#import "CharlesTVSeriesCollection.h"
-#import "CharlesEpisodeCollection.h"
 #import "CharlesEpisode.h"
 #import "CharlesSeason.h"
 #import "CharlesClient.h"
 #import "CharlesArtwork.h"
 #import "CharlesTVSeriesDetails.h"
-#import "CharlesSeasonCollection.h"
 
 @implementation CharlesTVSeries
 
@@ -71,7 +67,7 @@
     [[self class] loadTVSeriesWithImdbId:nil zap2itId:zap2itId completion:completion failure:failure];
 }
 
-+ (void)searchTVSeriesByName:(NSString *)name completion:(void (^)(CharlesTVSeriesCollection *))completion failure:(void (^)(NSError *))failure
++ (void)searchTVSeriesByName:(NSString *)name completion:(void (^)(NSArray *))completion failure:(void (^)(NSError *))failure
 {
     CharlesRequest *request = [CharlesRequest requestWithPath:@"GetSeries.php" usingAPIKey:NO];
     [request addQueryParameterWithValue:name forKey:@"seriesname"];
@@ -79,8 +75,8 @@
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
         if (completion)
         {
-            CharlesTVSeriesCollection *results = [[CharlesTVSeriesCollection alloc] init];
             NSArray *seriesElements = [xmlDocument.rootElement elementsForName:@"Series"];
+            NSMutableArray *results = [NSMutableArray arrayWithCapacity:[seriesElements count]];
             for (DDXMLElement *element in seriesElements)
             {
                 CharlesTVSeries *tvSeries = [self tvSeriesModelFromXMLElement:element];
@@ -296,27 +292,21 @@
     [allEpisodes sortUsingDescriptors:@[ seasonSortDesc, episodeSortDesc ]];
     
     // Group episodes into seasons and add the seasons to the series
-    CharlesSeason *currentSeason = nil;
-    for (CharlesEpisode *episode in allEpisodes)
+    NSSortDescriptor *seasonNumberSortDesc = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    NSArray *seasonNumbers = [[allEpisodes valueForKeyPath:@"@distinctUnionOfObjects.seasonNumber"] sortedArrayUsingDescriptors:@[ seasonNumberSortDesc ]];
+    NSMutableArray *seasons = [NSMutableArray arrayWithCapacity:[seasonNumbers count]];
+    for (NSNumber *seasonNumber in seasonNumbers)
     {
-        if (currentSeason == nil || ![episode.seasonNumber isEqualToNumber:currentSeason.seasonNumber])
-        {
-            if (currentSeason != nil)
-            {
-                [details.seasons addObject:currentSeason];
-            }
-            
-            currentSeason = [[CharlesSeason alloc] init];
-            [currentSeason setValue:episode.seasonNumber forKey:@"seasonNumber"];
-            [currentSeason setValue:self forKey:@"tvSeries"];
-        }
-        
-        [episode setValue:currentSeason forKey:@"season"];
-        [currentSeason.episodes addObject:episode];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"seasonNumber == %@", seasonNumber];
+        NSArray *episodes = [allEpisodes filteredArrayUsingPredicate:predicate];
+        CharlesSeason *season = [[CharlesSeason alloc] init];
+        [season setValue:seasonNumber forKey:@"seasonNumber"];
+        [season setValue:episodes forKey:@"episodes"];
+
+        [seasons addObject:season];
     }
     
-    // Add last season
-    [details.seasons addObject:currentSeason];
+    [details setValue:seasons forKey:@"seasons"];
     
     return details;
 }

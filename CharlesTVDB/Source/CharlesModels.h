@@ -13,6 +13,3 @@
 #import "CharlesEpisode.h"
 #import "CharlesArtwork.h"
 #import "CharlesTVSeriesDetails.h"
-#import "CharlesTVSeriesCollection.h"
-#import "CharlesSeasonCollection.h"
-#import "CharlesEpisodeCollection.h"

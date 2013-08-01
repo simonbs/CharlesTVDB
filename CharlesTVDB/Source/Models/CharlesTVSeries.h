@@ -27,7 +27,7 @@
 + (void)loadTVSeriesWithId:(NSUInteger)seriesId completion:(void (^)(CharlesTVSeries *tvSeries))completion failure:(void (^)(NSError *error))failure;
 + (void)loadTVSeriesWithImdbId:(NSString *)imdbId completion:(void (^)(CharlesTVSeries *tvSeries))completion failure:(void (^)(NSError *error))failure;
 + (void)loadTVSeriesWithZap2itId:(NSString *)zap2itId completion:(void (^)(CharlesTVSeries *tvSeries))completion failure:(void (^)(NSError *error))failure;
-+ (void)searchTVSeriesByName:(NSString *)name completion:(void (^)(CharlesTVSeriesCollection *results))completion failure:(void (^)(NSError *error))failure;
++ (void)searchTVSeriesByName:(NSString *)name completion:(void (^)(NSArray *results))completion failure:(void (^)(NSError *error))failure;
 - (void)loadDetails:(void(^)(BOOL success, NSError *error))completion;
 
 @end

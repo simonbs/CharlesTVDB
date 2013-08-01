@@ -7,22 +7,11 @@
 //
 
 #import "CharlesSeason.h"
-#import "CharlesEpisodeCollection.h"
 
 @implementation CharlesSeason
 
 #pragma mark -
 #pragma mark Lifecycle
-
-- (id)init
-{
-    if (self = [super init])
-    {
-        _episodes = [[CharlesEpisodeCollection alloc] init];
-    }
-    
-    return self;
-}
 
 - (void)dealloc
 {
