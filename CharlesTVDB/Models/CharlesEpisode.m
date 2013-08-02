@@ -22,6 +22,7 @@
     _overview = nil;
     _firstAired = nil;
     _season = nil;
+    _thumb = nil;
 }
 
 #pragma mark -

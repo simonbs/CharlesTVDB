@@ -232,6 +232,7 @@
     NSArray *writers = [element elementsForName:@"Writer"];
     NSArray *guestStars = [element elementsForName:@"GuestStars"];
     NSArray *firstAireds = [element elementsForName:@"FirstAired"];
+    NSArray *thumbs = [element elementsForName:@"filename"];
  
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         
@@ -250,6 +251,12 @@
         dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
         dateFormatter.dateFormat = @"y-M-d";
         [episode setValue:[dateFormatter dateFromString:[[firstAireds objectAtIndex:0] stringValue]] forKey:@"firstAired"];
+    }
+    if ([thumbs count] > 0) {
+        NSURL *url = [[NSURL URLWithString:CharlesBannersBaseUrl] URLByAppendingPathComponent:[[thumbs objectAtIndex:0] stringValue]];
+        CharlesArtwork *thumb = [[CharlesArtwork alloc] init];
+        [thumb setValue:url forKey:@"url"];
+        [episode setValue:thumb forKey:@"thumb"];
     }
     
     return episode;
