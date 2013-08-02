@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CharlesMacros.h"
 
 @interface CharlesArtwork : NSObject
 
 @property (nonatomic, readonly) NSURL *url;
-@property (nonatomic, readonly) NSImage *image;
+@property (nonatomic, readonly) CharlesImage *image;
 @property (nonatomic, readonly, getter = isLoaded) BOOL loaded;
 
 - (void)loadImage:(void (^)(BOOL success, NSError *error))completion;

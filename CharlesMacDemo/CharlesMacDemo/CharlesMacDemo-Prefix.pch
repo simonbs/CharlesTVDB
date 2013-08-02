@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'CharlesMacDemo' target in the 'CharlesMacDemo' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "CharlesTVDB.h"
+#endif

@@ -32,7 +32,7 @@
     }
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
-    AFImageRequestOperation *operation = [AFImageRequestOperation imageRequestOperationWithRequest:request imageProcessingBlock:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, NSImage *image) {
+    AFImageRequestOperation *operation = [AFImageRequestOperation imageRequestOperationWithRequest:request imageProcessingBlock:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, CharlesImage *image) {
         [self setValue:image forKey:@"image"];
         [self setValue:@(YES) forKey:@"loaded"];
         

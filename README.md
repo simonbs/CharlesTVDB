@@ -1,6 +1,10 @@
 # CharlesTVDB
 
-CharlesTVDB is a collection of classes for OS X which provides a block based interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
+CharlesTVDB is a collection of classes for OS X and iOS which provides a block based interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
+
+### ARC Required
+
+CharlesTVDB and some of its dependencies requires ARC to be enabled. If you are not already using ARC, now is a good time.
 
 ### Installation
 First and foremost you have to clone the repository. You probably already know how to do this.
@@ -12,7 +16,7 @@ Copy the `CharlesTVDB/` directory into your project.
 Next, you have to install the dependencies. CharlesTVDB needs [AFKissXMLRequestOperation](https://github.com/AFNetworking/AFKissXMLRequestOperation) which then again needs [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [KissXML](https://github.com/robbiehanson/KissXML), so that's a total of three dependencies.
 However, if you just add `pod 'AFKissXMLRequestOperation'` to your Podfile then the two other dependencies will automatically be installed.
 
-Now you just need to import the header.  You can do this in the prefix header.
+Now you just need to import the header.  I recommend doing this in the prefix header.
 
 	#import "CharlesTVDB"
 
@@ -96,6 +100,10 @@ You will find a banner on instances of CharlesTVSeries and in the details of the
 You can load an image by calling `-loadImage:` on the artwork. If the image is already loaded, it won't be loaded again. Instead, the completion block will be called immediately.
 
 The `isLoaded` property tells if the image is already loaded or not.
+
+### Demo Projects
+
+The two demo projects that are in this repository are very boring and are in no way complete. I will make some more interesting examples when I get some more time. However, the above description should give you plenty information on how to use CharlesTVDB.
 
 ### Credits
 
