@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class CharlesSeason;
+@class CharlesArtwork, CharlesSeason;
 
 @interface CharlesEpisode : NSObject
 
@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSArray *directors;
 @property (nonatomic, readonly) NSArray *guestStars;
 @property (nonatomic, readonly) NSDate *firstAired;
+@property (nonatomic, readonly) CharlesArtwork *thumb;
 @property (nonatomic, readonly, weak) CharlesSeason *season;
 
 @end
