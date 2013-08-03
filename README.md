@@ -2,27 +2,26 @@
 
 CharlesTVDB is a collection of classes for OS X and iOS which provides a block based interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
 
-### ARC Required
+## ARC Required
 
 CharlesTVDB and some of its dependencies requires ARC to be enabled. If you are not already using ARC, now is a good time.
 
-### Installation
-First and foremost you have to clone the repository. You probably already know how to do this.
+## Installation
 
-	git clone https://github.com/simonbs/CharlesTVDB.git
-	
-Copy the `CharlesTVDB/` directory into your project.
-	
-Next, you have to install the dependencies. CharlesTVDB needs [AFKissXMLRequestOperation](https://github.com/AFNetworking/AFKissXMLRequestOperation) which then again needs [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [KissXML](https://github.com/robbiehanson/KissXML), so that's a total of three dependencies.
-However, if you just add `pod 'AFKissXMLRequestOperation'` to your Podfile then the two other dependencies will automatically be installed.
+If  you are using CocoaPods (which you should!) you can just add the following to your podfile and run `pod install`.
 
-Now you just need to import the header.  I recommend doing this in the prefix header.
+	pod 'CharlesTVDB', :git => 'https://github.com/simonbs/CharlesTVDB.git'
+
+If you are not not using CocoaPods, you should clone this repository and copy CharlesTVDB/ directory into your project. You should also install [AFKissXMLRequestOperation](https://github.com/AFNetworking/AFKissXMLRequestOperation) which CharlesTVDB depends on.
+AFKissXMLRequestOperation then again depends on  [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [KissXML](https://github.com/robbiehanson/KissXML) so you will also have to install those.
+
+When you have installed CharlesTVDB either using CocoaPods or not, you just need to import the header.  I recommend doing this in the prefix header.
 
 	#import "CharlesTVDB"
 
 You're ready to use CharlesTVDB!
 
-### Usage
+## Usage
 
 First, you will have to grab an API key from [TheTVDB.com](http://thetvdb.com). If you have an account and you are logged in, you can [register your application here](http://thetvdb.com/?tab=apiregister) to get an API key.
 
@@ -101,14 +100,14 @@ You can load an image by calling `-loadImage:` on the artwork. If the image is a
 
 The `isLoaded` property tells if the image is already loaded or not.
 
-### Demo Projects
+## Demo Projects
 
 The two demo projects that are in this repository are very boring and are in no way complete. I will make some more interesting examples when I get some more time. However, the above description should give you plenty information on how to use CharlesTVDB.
 
-### Credits
+## Credits
 
 CharlesTVDB is developed by [@simonbs](http://twitter.com/simonbs), [simonbs.dk](http://simonbs.dk) Feel free to fork the repository and send pull requests if you have made something awesome.
 
-### License
+## License
 
 CharlesTVDB is released under the MIT license. Please see the LICENSE file for more information.
