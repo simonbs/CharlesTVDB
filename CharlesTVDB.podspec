@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/simonbs/CharlesTVDB.git', :tag => '1.0.0' }
   s.source_files = 'CharlesTVDB/**/*.{h,m}'
   s.dependency 'AFNetworking', '~> 1.3.1'
-  s.dependency 'KissXML', ~> '5.0'
-  s.dependency 'AFKissXMLRequestOperation', ~> '0.0.1'
+  s.dependency 'KissXML', '~> 5.0'
+  s.dependency 'AFKissXMLRequestOperation', '~> 0.0.1'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
