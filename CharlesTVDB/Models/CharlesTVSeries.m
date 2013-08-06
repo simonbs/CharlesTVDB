@@ -203,10 +203,13 @@
     if ([networks count] > 0) [tvSeries setValue:[[networks objectAtIndex:0] stringValue] forKey:@"network"];
     if ([banners count] > 0)
     {
-        NSURL *url = [[NSURL URLWithString:CharlesBannersBaseUrl] URLByAppendingPathComponent:[[banners objectAtIndex:0] stringValue]];
-        CharlesArtwork *banner = [[CharlesArtwork alloc] init];
-        [banner setValue:url forKey:@"url"];
-        [tvSeries setValue:banner forKey:@"banner"];
+        NSString *path = [[banners objectAtIndex:0] stringValue];
+        if (![path isEqualToString:@""]) {
+            NSURL *url = [[NSURL URLWithString:CharlesBannersBaseUrl] URLByAppendingPathComponent:path];
+            CharlesArtwork *banner = [[CharlesArtwork alloc] init];
+            [banner setValue:url forKey:@"url"];
+            [tvSeries setValue:banner forKey:@"banner"];
+        }
     }
     if ([firstAireds count] > 0)
     {
@@ -253,10 +256,13 @@
         [episode setValue:[dateFormatter dateFromString:[[firstAireds objectAtIndex:0] stringValue]] forKey:@"firstAired"];
     }
     if ([thumbs count] > 0) {
-        NSURL *url = [[NSURL URLWithString:CharlesBannersBaseUrl] URLByAppendingPathComponent:[[thumbs objectAtIndex:0] stringValue]];
-        CharlesArtwork *thumb = [[CharlesArtwork alloc] init];
-        [thumb setValue:url forKey:@"url"];
-        [episode setValue:thumb forKey:@"thumb"];
+        NSString *path = [[thumbs objectAtIndex:0] stringValue];
+        if (![path isEqualToString:@""]) {
+            NSURL *url = [[NSURL URLWithString:CharlesBannersBaseUrl] URLByAppendingPathComponent:[[thumbs objectAtIndex:0] stringValue]];
+            CharlesArtwork *thumb = [[CharlesArtwork alloc] init];
+            [thumb setValue:url forKey:@"url"];
+            [episode setValue:thumb forKey:@"thumb"];
+        }
     }
     
     return episode;
