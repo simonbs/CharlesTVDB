@@ -176,7 +176,7 @@
 
 + (CharlesTVSeries *)tvSeriesModelFromDetailsXMLDocument:(DDXMLDocument *)document
 {
-    NSArray *seriesIds = [document.rootElement nodesForXPath:@"Series/SeriesID" error:nil];
+    NSArray *seriesIds = [document.rootElement nodesForXPath:@"Series/id" error:nil];
     NSArray *languages = [document.rootElement nodesForXPath:@"Series/Language" error:nil];
     NSArray *seriesNames = [document.rootElement nodesForXPath:@"Series/SeriesName" error:nil];
     NSArray *overviews = [document.rootElement nodesForXPath:@"Series/Overview" error:nil];
