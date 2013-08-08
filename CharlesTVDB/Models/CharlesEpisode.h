@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSArray *directors;
 @property (nonatomic, readonly) NSArray *guestStars;
 @property (nonatomic, readonly) NSDate *firstAired;
+@property (nonatomic, readonly) NSString *imdbId;
 @property (nonatomic, readonly) CharlesArtwork *thumb;
 @property (nonatomic, readonly, weak) CharlesSeason *season;
 
