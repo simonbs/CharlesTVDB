@@ -235,6 +235,7 @@
     NSArray *writers = [element elementsForName:@"Writer"];
     NSArray *guestStars = [element elementsForName:@"GuestStars"];
     NSArray *firstAireds = [element elementsForName:@"FirstAired"];
+    NSArray *imdbIds = [element elementsForName:@"IMDB_ID"];
     NSArray *thumbs = [element elementsForName:@"filename"];
  
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
@@ -248,6 +249,7 @@
     if ([directors count] > 0) [episode setValue:[self arrayFromMultipleValuedString:[[directors objectAtIndex:0] stringValue]] forKey:@"directors"];
     if ([writers count] > 0) [episode setValue:[self arrayFromMultipleValuedString:[[writers objectAtIndex:0] stringValue]] forKey:@"writers"];
     if ([guestStars count] > 0) [episode setValue:[self arrayFromMultipleValuedString:[[guestStars objectAtIndex:0] stringValue]] forKey:@"guestStars"];
+    if ([imdbIds count] > 0) [episode setValue:[[imdbIds objectAtIndex:0] stringValue] forKey:@"imdbId"];
     if ([firstAireds count] > 0)
     {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
