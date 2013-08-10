@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01D2A33B7FE045AE8CEF2BE4 /* libPods-CharlesMacDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D5187A5737411E88FF5FAF /* libPods-CharlesMacDemo.a */; };
+		7242378917B6903D0015D790 /* CharlesTimeZoneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7242378817B6903D0015D790 /* CharlesTimeZoneHelper.m */; };
 		72F4963C17AB7D8200304027 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F4963B17AB7D8200304027 /* Cocoa.framework */; };
 		72F4964617AB7D8200304027 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72F4964417AB7D8200304027 /* InfoPlist.strings */; };
 		72F4964817AB7D8200304027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F4964717AB7D8200304027 /* main.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7242378717B6903D0015D790 /* CharlesTimeZoneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTimeZoneHelper.h; sourceTree = "<group>"; };
+		7242378817B6903D0015D790 /* CharlesTimeZoneHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTimeZoneHelper.m; sourceTree = "<group>"; };
 		72F4963817AB7D8200304027 /* CharlesMacDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharlesMacDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F4963B17AB7D8200304027 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		72F4963E17AB7D8200304027 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -178,6 +181,8 @@
 				72F496F517AB844600304027 /* CharlesRequest.h */,
 				72F496F617AB844600304027 /* CharlesRequest.m */,
 				72F496F717AB844600304027 /* CharlesTVDB.h */,
+				7242378717B6903D0015D790 /* CharlesTimeZoneHelper.h */,
+				7242378817B6903D0015D790 /* CharlesTimeZoneHelper.m */,
 			);
 			name = CharlesTVDB;
 			path = ../../CharlesTVDB;
@@ -322,6 +327,7 @@
 				72F4970D17AB844600304027 /* CharlesSeason.m in Sources */,
 				72F4970E17AB844600304027 /* CharlesTVSeries.m in Sources */,
 				72F4970F17AB844600304027 /* CharlesTVSeriesDetails.m in Sources */,
+				7242378917B6903D0015D790 /* CharlesTimeZoneHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
