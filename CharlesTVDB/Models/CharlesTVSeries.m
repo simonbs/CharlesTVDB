@@ -126,13 +126,10 @@
 #pragma mark Private Methods
 
 + (NSDateFormatter *)firstAiredDateFormattter {
-    static NSDateFormatter *_firstAiredDateFormattter;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _firstAiredDateFormattter = [[NSDateFormatter alloc] init];
-        [_firstAiredDateFormattter setDateFormat:@"yyyy-MM-dd h:mm a"];
-        [_firstAiredDateFormattter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    });
+    NSDateFormatter *_firstAiredDateFormattter;
+    _firstAiredDateFormattter = [[NSDateFormatter alloc] init];
+    [_firstAiredDateFormattter setDateFormat:@"yyyy-MM-dd h:mm a"];
+    [_firstAiredDateFormattter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     
     return _firstAiredDateFormattter;
 }
