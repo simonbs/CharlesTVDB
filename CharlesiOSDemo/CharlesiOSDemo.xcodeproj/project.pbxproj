@@ -164,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				72F4971117AB844C00304027 /* Categories */,
+				72F4971D17AB844C00304027 /* Models */,
 				72F4971617AB844C00304027 /* CharlesClient.h */,
 				72F4971717AB844C00304027 /* CharlesClient.m */,
 				72F4971817AB844C00304027 /* CharlesMacros.h */,
@@ -171,7 +172,6 @@
 				72F4971A17AB844C00304027 /* CharlesRequest.h */,
 				72F4971B17AB844C00304027 /* CharlesRequest.m */,
 				72F4971C17AB844C00304027 /* CharlesTVDB.h */,
-				72F4971D17AB844C00304027 /* Models */,
 			);
 			name = CharlesTVDB;
 			path = ../../CharlesTVDB;
@@ -203,16 +203,8 @@
 				72F4972717AB844C00304027 /* CharlesTVSeries.m */,
 				72F4972817AB844C00304027 /* CharlesTVSeriesDetails.h */,
 				72F4972917AB844C00304027 /* CharlesTVSeriesDetails.m */,
-				72F4972A17AB844C00304027 /* Collections */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		72F4972A17AB844C00304027 /* Collections */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Collections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
