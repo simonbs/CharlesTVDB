@@ -43,7 +43,7 @@
     CharlesRequest *request = [CharlesRequest requestWithPath:path usingAPIKey:YES];
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
         CharlesTVSeries *tvSeries = [[self class] tvSeriesModelFromDetailsXMLDocument:xmlDocument];
-        CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
+        CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument tvSeries:tvSeries];
         [tvSeries setValue:details forKey:@"details"];
         [tvSeries setValue:@(YES) forKey:@"detailsLoaded"];
         
@@ -106,7 +106,7 @@
     NSString *path = [NSString stringWithFormat:@"series/%@/all/%@.xml", self.identifier, [CharlesClient sharedClient].language];
     CharlesRequest *request = [CharlesRequest requestWithPath:path usingAPIKey:YES];
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
+        CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument tvSeries:self];
         [self setValue:details forKey:@"details"];
         [self setValue:@(YES) forKey:@"detailsLoaded"];
         
@@ -124,6 +124,37 @@
 
 #pragma mark -
 #pragma mark Private Methods
+
++ (NSDateFormatter *)firstAiredDateFormattter {
+    NSDateFormatter *_firstAiredDateFormattter;
+    _firstAiredDateFormattter = [[NSDateFormatter alloc] init];
+    [_firstAiredDateFormattter setDateFormat:@"yyyy-MM-dd h:mm a"];
+    [_firstAiredDateFormattter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    
+    return _firstAiredDateFormattter;
+}
+
++ (NSTimeZone *)timezoneForNetwork:(NSString *)network {
+    network = [network lowercaseString];
+    
+    // This is so so so BAD!!
+    if ([network isEqualToString:@"dr1"] ||                         // Denmark
+        [network isEqualToString:@"dr2"] ||                         // Denmark
+        [network isEqualToString:@"tv2"] ||                         // Denmark
+        [network rangeOfString:@"svt"].location != NSNotFound ||    // Sweden
+        [network rangeOfString:@"nrk"].location != NSNotFound ||    // Norway
+        [network rangeOfString:@"tv4"].location != NSNotFound ||    // Sweden
+        [network rangeOfString:@"zdf"].location != NSNotFound) {    // Germany
+        return [NSTimeZone timeZoneWithAbbreviation:@"CET"];
+    } else if([network isEqualToString:@"e4"] ||                    // United Kingdom
+              [network isEqualToString:@"itv1"] ||                  // United Kingdom
+              [network isEqualToString:@"channel 4"] ||             // United Kingdom
+              [network rangeOfString:@"bbc"].location != NSNotFound) {
+        return [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    } else {
+        return [NSTimeZone timeZoneWithName:@"US/Eastern"];         // United States
+    }
+}
 
 + (void)loadTVSeriesWithImdbId:(NSString *)imdbId zap2itId:(NSString *)zap2itId completion:(void (^)(CharlesTVSeries *tvSeries))completion failure:(void (^)(NSError *error))failure
 {
@@ -224,7 +255,7 @@
     return tvSeries;
 }
 
-+ (CharlesEpisode *)episodeModelFromXMLElement:(DDXMLElement *)element
++ (CharlesEpisode *)episodeModelFromXMLElement:(DDXMLElement *)element tvSeries:(CharlesTVSeries *)tvSeries details:(CharlesTVSeriesDetails *)details
 {
     NSArray *identifiers = [element elementsForName:@"id"];
     NSArray *episodeNumbers = [element elementsForName:@"EpisodeNumber"];
@@ -252,10 +283,32 @@
     if ([imdbIds count] > 0) [episode setValue:[[imdbIds objectAtIndex:0] stringValue] forKey:@"imdbId"];
     if ([firstAireds count] > 0)
     {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-        dateFormatter.dateFormat = @"y-M-d";
-        [episode setValue:[dateFormatter dateFromString:[[firstAireds objectAtIndex:0] stringValue]] forKey:@"firstAired"];
+        NSString *firstAired = [[firstAireds objectAtIndex:0] stringValue];
+        if (firstAired && ![firstAired isEqualToString:@""]) {
+            NSDateFormatter *dateFormatter = [[self class] firstAiredDateFormattter];
+            
+            if (details.airtime || ![details.airtime isEqualToString:@""]) {
+                firstAired = [firstAired stringByAppendingFormat:@" %@", details.airtime];
+                
+                // Some of the dates provided are formatted with 12-hour notation
+                if (details.airtime.length > 5) {
+                    [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
+                } else {
+                    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+                }
+                
+                if (tvSeries.network) {
+                    [dateFormatter setTimeZone:[[self class] timezoneForNetwork:tvSeries.network]];
+                }
+                
+            } else {
+                [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                [dateFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
+            }
+
+            
+            [episode setValue:[dateFormatter dateFromString:firstAired] forKey:@"firstAired"];
+        }
     }
     if ([thumbs count] > 0) {
         NSString *path = [[thumbs objectAtIndex:0] stringValue];
@@ -270,7 +323,7 @@
     return episode;
 }
 
-+ (CharlesTVSeriesDetails *)detailsFromXMLDocument:(DDXMLDocument *)document
++ (CharlesTVSeriesDetails *)detailsFromXMLDocument:(DDXMLDocument *)document tvSeries:(CharlesTVSeries *)tvSeries
 {
     CharlesTVSeriesDetails *details = [[CharlesTVSeriesDetails alloc] init];
     
@@ -278,6 +331,7 @@
     NSArray *genres = [document.rootElement nodesForXPath:@"Series/Genre" error:nil];
     NSArray *fanarts = [document.rootElement nodesForXPath:@"Series/fanart" error:nil];
     NSArray *posters = [document.rootElement nodesForXPath:@"Series/poster" error:nil];
+    NSArray *airtimes = [document.rootElement nodesForXPath:@"Series/Airs_Time" error:nil];
     
     if ([actors count] > 0) [details setValue:[[self class] arrayFromMultipleValuedString:[[actors objectAtIndex:0] stringValue]] forKey:@"actors"];
     if ([genres count] > 0) [details setValue:[[self class] arrayFromMultipleValuedString:[[genres objectAtIndex:0] stringValue]] forKey:@"genres"];
@@ -295,12 +349,13 @@
         [poster setValue:url forKey:@"url"];
         [details setValue:poster forKey:@"poster"];
     }
+    if ([airtimes count] > 0) [details setValue:[[airtimes objectAtIndex:0] stringValue] forKey:@"airtime"];
     
     NSArray *episodeElements = [document.rootElement elementsForName:@"Episode"];
     NSMutableArray *allEpisodes = [NSMutableArray arrayWithCapacity:[episodeElements count]];
     for (DDXMLElement *element in episodeElements)
     {
-        CharlesEpisode *episode = [[self class] episodeModelFromXMLElement:element];
+        CharlesEpisode *episode = [[self class] episodeModelFromXMLElement:element tvSeries:tvSeries details:details];
         [allEpisodes addObject:episode];
     }
     
