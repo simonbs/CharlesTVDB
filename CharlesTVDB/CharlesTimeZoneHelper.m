@@ -118,20 +118,9 @@ enum {
         NSArray *knownNetworks = [mapEntry objectForKey:kTimeZoneMapNetworksKey];
         
         // Check if the input network is known in this map entry
-        BOOL matchFound = NO;
-        for (NSString *knownNetwork in knownNetworks)
-        {
-            NSString *lowerKnownNetwork = [knownNetwork lowercaseString];
-            if ([network isEqualToString:lowerKnownNetwork] || STRING_CONTAINS(network, lowerKnownNetwork))
-            {
-                // We found a match
-                matchFound = YES;
-                break;
-            }
-        }
-        
-        // Check if we found a match
-        if (matchFound)
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ == SELF || %@ CONTAINS[c] SELF", network, network];
+        NSArray *filteredNetworks = [knownNetworks filteredArrayUsingPredicate:predicate];
+        if ([filteredNetworks count] > 0)
         {
             // Create a timezone from the match
             NSString *timeZone = [mapEntry objectForKey:kTimeZoneMapTimeZoneKey];
