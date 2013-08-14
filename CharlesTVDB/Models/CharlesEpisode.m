@@ -20,9 +20,10 @@
     _episodeNumber = nil;
     _seasonNumber = nil;
     _overview = nil;
-    _firstAired = nil;
+    _formattedFirstAired = nil;
     _season = nil;
     _thumb = nil;
+    _firstAired = nil;
 }
 
 #pragma mark -

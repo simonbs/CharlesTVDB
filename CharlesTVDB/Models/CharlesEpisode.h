@@ -20,9 +20,14 @@
 @property (nonatomic, readonly) NSArray *writers;
 @property (nonatomic, readonly) NSArray *directors;
 @property (nonatomic, readonly) NSArray *guestStars;
-@property (nonatomic, readonly) NSDate *firstAired;
+@property (nonatomic, readonly) NSString *formattedFirstAired;
 @property (nonatomic, readonly) NSString *imdbId;
 @property (nonatomic, readonly) CharlesArtwork *thumb;
 @property (nonatomic, readonly, weak) CharlesSeason *season;
+
+/**
+ *  This is not set unless you configure the TV series using the CharlesTimeZoneHelper.
+ */
+@property (nonatomic, readonly) NSDate *firstAired;
 
 @end
