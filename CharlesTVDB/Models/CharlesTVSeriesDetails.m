@@ -17,6 +17,7 @@
 {
     _actors = nil;
     _genres = nil;
+    _formattedAirtime = nil;
     _fanart = nil;
     _poster = nil;
     _seasons = nil;

@@ -14,6 +14,7 @@
 
 @property (nonatomic, readonly) NSArray *actors;
 @property (nonatomic, readonly) NSArray *genres;
+@property (nonatomic, readonly) NSString *formattedAirtime;
 @property (nonatomic, readonly) CharlesArtwork *fanart;
 @property (nonatomic, readonly) CharlesArtwork *poster;
 @property (nonatomic, readonly) NSArray *seasons;

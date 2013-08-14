@@ -28,10 +28,11 @@
     _name = nil;
     _overview = nil;
     _network = nil;
-    _firstAired = nil;
+    _formattedFirstAired = nil;
     _imdbId = nil;
     _zap2itId = nil;
     _banner = nil;
+    _firstAired = nil;
 }
 
 #pragma mark -
@@ -201,6 +202,7 @@
     if ([imdbIds count] > 0) [tvSeries setValue:[[imdbIds objectAtIndex:0] stringValue] forKey:@"imdbId"];
     if ([zap2itIds count] > 0) [tvSeries setValue:[[zap2itIds objectAtIndex:0] stringValue] forKey:@"zap2itId"];
     if ([networks count] > 0) [tvSeries setValue:[[networks objectAtIndex:0] stringValue] forKey:@"network"];
+    if ([firstAireds count] > 0) [tvSeries setValue:[[firstAireds objectAtIndex:0] stringValue] forKey:@"formattedFirstAired"];
     if ([banners count] > 0)
     {
         NSString *path = [[banners objectAtIndex:0] stringValue];
@@ -210,15 +212,6 @@
             [banner setValue:url forKey:@"url"];
             [tvSeries setValue:banner forKey:@"banner"];
         }
-    }
-    if ([firstAireds count] > 0)
-    {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-        dateFormatter.dateFormat = @"y-M-d";
-        
-        NSDate *firstAired = [dateFormatter dateFromString:[[firstAireds objectAtIndex:0] stringValue]];
-        [tvSeries setValue:firstAired forKey:@"firstAired"];
     }
     
     return tvSeries;
@@ -250,13 +243,7 @@
     if ([writers count] > 0) [episode setValue:[self arrayFromMultipleValuedString:[[writers objectAtIndex:0] stringValue]] forKey:@"writers"];
     if ([guestStars count] > 0) [episode setValue:[self arrayFromMultipleValuedString:[[guestStars objectAtIndex:0] stringValue]] forKey:@"guestStars"];
     if ([imdbIds count] > 0) [episode setValue:[[imdbIds objectAtIndex:0] stringValue] forKey:@"imdbId"];
-    if ([firstAireds count] > 0)
-    {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-        dateFormatter.dateFormat = @"y-M-d";
-        [episode setValue:[dateFormatter dateFromString:[[firstAireds objectAtIndex:0] stringValue]] forKey:@"firstAired"];
-    }
+    if ([firstAireds count] > 0) [episode setValue:[[firstAireds objectAtIndex:0] stringValue] forKey:@"formattedFirstAired"];
     if ([thumbs count] > 0) {
         NSString *path = [[thumbs objectAtIndex:0] stringValue];
         if (![path isEqualToString:@""]) {
@@ -278,9 +265,11 @@
     NSArray *genres = [document.rootElement nodesForXPath:@"Series/Genre" error:nil];
     NSArray *fanarts = [document.rootElement nodesForXPath:@"Series/fanart" error:nil];
     NSArray *posters = [document.rootElement nodesForXPath:@"Series/poster" error:nil];
+    NSArray *airtimes = [document.rootElement nodesForXPath:@"Series/Airs_Time" error:nil];
     
     if ([actors count] > 0) [details setValue:[[self class] arrayFromMultipleValuedString:[[actors objectAtIndex:0] stringValue]] forKey:@"actors"];
     if ([genres count] > 0) [details setValue:[[self class] arrayFromMultipleValuedString:[[genres objectAtIndex:0] stringValue]] forKey:@"genres"];
+    if ([airtimes count] > 0) [details setValue:[[airtimes objectAtIndex:0] stringValue] forKey:@"formattedAirtime"];
     if ([fanarts count] > 0)
     {
         NSURL *url = [[NSURL URLWithString:CharlesBannersBaseUrl] URLByAppendingPathComponent:[[fanarts objectAtIndex:0] stringValue]];
