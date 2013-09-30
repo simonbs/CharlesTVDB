@@ -9,6 +9,7 @@
 #import "CharlesTimeZoneHelper.h"
 #import "CharlesTVSeries.h"
 #import "CharlesTVSeriesDetails.h"
+#import "CharlesModels.h"
 
 enum {
     kTimeZoneMapAbbreviationType = 0,
