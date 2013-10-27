@@ -3,14 +3,16 @@ xcodeproj 'CharlesiOSDemo/CharlesiOSDemo.xcodeproj'
 xcodeproj 'CharlesMacDemo/CharlesMacDemo.xcodeproj'
 
 target :CharlesiOSDemo do
-  platform :ios, '5.0'
+  platform :ios, '7.0'
   xcodeproj 'CharlesiOSDemo/CharlesiOSDemo.xcodeproj'
-  pod 'AFKissXMLRequestOperation'  
+  pod 'AFNetworking', '~> 2.0'
+  pod 'AFKissXMLRequestOperation', :git => 'https://github.com/marcelofabri/AFKissXMLRequestOperation.git'
 end
 
 target :CharlesMacDemo do
- platform :osx, '10.7'
+ platform :osx, '10.9'
   xcodeproj 'CharlesMacDemo/CharlesMacDemo.xcodeproj'
-  pod 'AFKissXMLRequestOperation'
+  pod 'AFNetworking', '~> 2.0'
+  pod 'AFKissXMLRequestOperation', :git => 'https://github.com/marcelofabri/AFKissXMLRequestOperation.git'
 end
 
