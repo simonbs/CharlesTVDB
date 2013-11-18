@@ -32,7 +32,11 @@
     }
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
-    AFImageRequestOperation *operation = [AFImageRequestOperation imageRequestOperationWithRequest:request imageProcessingBlock:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, CharlesImage *image) {
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFImageResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        UIImage *image = (UIImage *)responseObject;
+        
         [self setValue:image forKey:@"image"];
         [self setValue:@(YES) forKey:@"loaded"];
         
@@ -40,12 +44,13 @@
         {
             completion(YES, nil);
         }
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion)
         {
             completion(NO, error);
         }
     }];
+    
     [operation start];
 }
 

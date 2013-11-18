@@ -399,6 +399,15 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlesiOSDemo/CharlesiOSDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFKissXMLRequestOperation\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/KissXML\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+				);
 				INFOPLIST_FILE = "CharlesiOSDemo/CharlesiOSDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -411,6 +420,15 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlesiOSDemo/CharlesiOSDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFKissXMLRequestOperation\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/KissXML\"",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+				);
 				INFOPLIST_FILE = "CharlesiOSDemo/CharlesiOSDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

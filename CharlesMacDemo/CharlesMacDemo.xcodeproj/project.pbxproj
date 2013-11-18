@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01D2A33B7FE045AE8CEF2BE4 /* libPods-CharlesMacDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D5187A5737411E88FF5FAF /* libPods-CharlesMacDemo.a */; };
+		648A0C1BB02144E789DC7BBA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB36B7D5159482FB9B68EE2 /* libPods.a */; };
 		7242378917B6903D0015D790 /* CharlesTimeZoneHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7242378817B6903D0015D790 /* CharlesTimeZoneHelper.m */; };
 		72F4963C17AB7D8200304027 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F4963B17AB7D8200304027 /* Cocoa.framework */; };
 		72F4964617AB7D8200304027 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72F4964417AB7D8200304027 /* InfoPlist.strings */; };
@@ -66,7 +67,9 @@
 		72F4970217AB844600304027 /* CharlesTVSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTVSeries.m; sourceTree = "<group>"; };
 		72F4970317AB844600304027 /* CharlesTVSeriesDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharlesTVSeriesDetails.h; sourceTree = "<group>"; };
 		72F4970417AB844600304027 /* CharlesTVSeriesDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharlesTVSeriesDetails.m; sourceTree = "<group>"; };
+		7EB36B7D5159482FB9B68EE2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9143326539624F438A9A93B7 /* Pods-CharlesMacDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharlesMacDemo.xcconfig"; path = "../Pods/Pods-CharlesMacDemo.xcconfig"; sourceTree = SOURCE_ROOT; };
+		F51ED8EE54864DE2864B3D4E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F7D5187A5737411E88FF5FAF /* libPods-CharlesMacDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CharlesMacDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +80,7 @@
 			files = (
 				72F4963C17AB7D8200304027 /* Cocoa.framework in Frameworks */,
 				01D2A33B7FE045AE8CEF2BE4 /* libPods-CharlesMacDemo.a in Frameworks */,
+				648A0C1BB02144E789DC7BBA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +94,7 @@
 				72F4963A17AB7D8200304027 /* Frameworks */,
 				72F4963917AB7D8200304027 /* Products */,
 				9143326539624F438A9A93B7 /* Pods-CharlesMacDemo.xcconfig */,
+				F51ED8EE54864DE2864B3D4E /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +112,7 @@
 				72F4963B17AB7D8200304027 /* Cocoa.framework */,
 				72F4963D17AB7D8200304027 /* Other Frameworks */,
 				F7D5187A5737411E88FF5FAF /* libPods-CharlesMacDemo.a */,
+				7EB36B7D5159482FB9B68EE2 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,7 +298,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-CharlesMacDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		B2FBA1D6D8C5407A8A3375D1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -422,12 +429,13 @@
 		};
 		72F4965617AB7D8200304027 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9143326539624F438A9A93B7 /* Pods-CharlesMacDemo.xcconfig */;
+			baseConfigurationReference = F51ED8EE54864DE2864B3D4E /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlesMacDemo/CharlesMacDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					"${PODS_HEADERS_SEARCH_PATHS}",
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
@@ -435,18 +443,20 @@
 				);
 				INFOPLIST_FILE = "CharlesMacDemo/CharlesMacDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		72F4965717AB7D8200304027 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9143326539624F438A9A93B7 /* Pods-CharlesMacDemo.xcconfig */;
+			baseConfigurationReference = F51ED8EE54864DE2864B3D4E /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlesMacDemo/CharlesMacDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					"${PODS_HEADERS_SEARCH_PATHS}",
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"$(SDKROOT)/usr/include/libxml2\"",
@@ -454,6 +464,7 @@
 				);
 				INFOPLIST_FILE = "CharlesMacDemo/CharlesMacDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

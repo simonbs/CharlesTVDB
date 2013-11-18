@@ -8,6 +8,7 @@
 
 #import "CharlesLanguage.h"
 #import "CharlesRequest.h"
+#import <KissXML/DDXML.h>
 
 @implementation CharlesLanguage
 
