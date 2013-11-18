@@ -2,9 +2,10 @@
 
 CharlesTVDB is a collection of classes for OS X and iOS which provides a block based interface for [TheTVDB.com](http://thetvdb.com) which is extremely easy to use.
 
-## ARC Required
+## Requirements
 
-CharlesTVDB and some of its dependencies requires ARC to be enabled. If you are not already using ARC, now is a good time.
+- iOS 7 is required.
+- CharlesTVDB and some of its dependencies requires ARC to be enabled. If you are not already using ARC, now is a good time.
 
 ## Installation
 
