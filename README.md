@@ -13,7 +13,10 @@ If  you are using CocoaPods (which you should!) you can just add the following t
 	pod 'CharlesTVDB', :git => 'https://github.com/simonbs/CharlesTVDB.git'
 	pod 'AFKissXMLRequestOperation', :git => 'https://github.com/marcelofabri/AFKissXMLRequestOperation.git'
 
-If you are not not using CocoaPods, you should clone this repository and copy CharlesTVDB/ directory into your project. You should also install [AFKissXMLRequestOperation](https://github.com/marcelofabri/AFKissXMLRequestOperation) (**OBS**: CharlesTVDB uses [Marcelo Fabris](https://github.com/marcelofabri) fork of AFKissXMLRequestOperation which supports AFNetworking 2.0) which CharlesTVDB depends on.
+If you are not not using CocoaPods, you should clone this repository and copy CharlesTVDB/ directory into your project. You should also install [AFKissXMLRequestOperation](https://github.com/marcelofabri/AFKissXMLRequestOperation) which CharlesTVDB depends on.
+**NOTE**: CharlesTVDB uses [Marcelo Fabris](https://github.com/marcelofabri) fork of AFKissXMLRequestOperation which supports AFNetworking 2.0.
+You have to install the fork of AFKissXMLRequestOperation manually (e.g. using CocoaPods as shown above) as it is not possible to specify a fork as a dependency in a podspec.
+
 AFKissXMLRequestOperation then again depends on  [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [KissXML](https://github.com/robbiehanson/KissXML) so you will also have to install those.
 
 When you have installed CharlesTVDB either using CocoaPods or not, you just need to import the header.  I recommend doing this in the prefix header.
