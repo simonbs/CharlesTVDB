@@ -13,7 +13,6 @@
 #import "CharlesClient.h"
 #import "CharlesArtwork.h"
 #import "CharlesTVSeriesDetails.h"
-
 #import <KissXML/DDXML.h>
 
 #define CharlesBannersBaseUrl @"http://www.thetvdb.com/banners/"
