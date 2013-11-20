@@ -153,18 +153,22 @@
         [request addQueryParameterWithValue:zap2itId forKey:@"zap2it"];
     }
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        CharlesTVSeries *tvSeries = nil;
-        NSArray *seriesElements = [xmlDocument.rootElement elementsForName:@"Series"];
-        if ([seriesElements count] > 0)
-        {
-            DDXMLElement *element = [seriesElements objectAtIndex:0];
-            tvSeries = [self tvSeriesModelFromXMLElement:element];
-        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
+            CharlesTVSeries *tvSeries = nil;
+            NSArray *seriesElements = [xmlDocument.rootElement elementsForName:@"Series"];
+            if ([seriesElements count] > 0)
+            {
+                DDXMLElement *element = [seriesElements objectAtIndex:0];
+                tvSeries = [self tvSeriesModelFromXMLElement:element];
+            }
         
-        if (completion)
-        {
-            completion(tvSeries);
-        }
+            if (completion)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(tvSeries);
+                });
+            }
+        });
     } failure:^(NSError *error) {
         if (failure)
         {
