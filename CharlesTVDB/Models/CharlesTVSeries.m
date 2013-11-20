@@ -89,13 +89,13 @@
                 CharlesTVSeries *tvSeries = [self tvSeriesModelFromXMLElement:element];
                 [results addObject:tvSeries];
             }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (completion)
-                {
+
+            if (completion)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
                     completion(results);
-                }
-            });
+                });
+            }
         });
     } failure:^(NSError *error) {
         if (failure)
