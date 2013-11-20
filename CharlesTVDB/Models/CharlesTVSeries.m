@@ -116,14 +116,18 @@
     NSString *path = [NSString stringWithFormat:@"series/%@/all/%@.xml", self.identifier, [CharlesClient sharedClient].language];
     CharlesRequest *request = [CharlesRequest requestWithPath:path usingAPIKey:YES];
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
-        [self setValue:details forKey:@"details"];
-        [self setValue:@(YES) forKey:@"detailsLoaded"];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
+            CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
+            [self setValue:details forKey:@"details"];
+            [self setValue:@(YES) forKey:@"detailsLoaded"];
         
-        if (completion)
-        {
-            completion(YES, nil);
-        }
+            if (completion)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(YES, nil);
+                });
+            }
+        });
     } failure:^(NSError *error) {
         if (completion)
         {
