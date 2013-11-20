@@ -22,19 +22,12 @@
     [self.window makeKeyAndVisible];
     
     // We haven't configured the CharlesClient with an API key because TheTVDB doesn't require an API key for search their  TV series, however, I recommend always setting the key.
-    [[CharlesClient sharedClient] setApiKey:@"91AD2C0D2006EA0B"];
-    
+
     [CharlesTVSeries searchTVSeriesByName:@"the mentalist" completion:^(NSArray *results) {
-        CharlesTVSeries *series = results[0];
-        [series loadDetails:^(BOOL success, NSError *error) {
-            NSLog(@"details loaded");
-            
-            [series.banner loadImage:^(BOOL success, NSError *error) {
-                NSLog(@"Image Loaded");
-                NSLog(@"%@", series);
-            }];
-        }];
-        
+        for (CharlesTVSeries *tvSeries in results)
+        {
+            NSLog(@"%@", tvSeries.name);
+        }
     } failure:^(NSError *error) {
         NSLog(@"Search failed: %@", error);
     }];
