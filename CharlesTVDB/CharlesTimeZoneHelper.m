@@ -22,6 +22,7 @@ enum {
 
 #define kTimeZoneAbbreviationCET @"CET"
 #define kTimeZoneAbbreviationGMT @"GMT"
+#define kTimeZoneAbbreviationEST @"US/Eastern"
 
 #define STRING_CONTAINS(str, contains) [str rangeOfString:contains].location != NSNotFound
 
@@ -41,6 +42,15 @@ enum {
     if (!timeZone && defaultTimeZone)
     {
         timeZone = defaultTimeZone;
+    }
+    
+    if ([timeZone isEqual:[NSTimeZone timeZoneWithName:@"US/Eastern"]]) {
+        NSTimeZone *localTimeZone = [NSTimeZone systemTimeZone];
+        if ([localTimeZone isEqual:[NSTimeZone timeZoneWithAbbreviation:@"MST"]]) {
+            timeZone = [NSTimeZone timeZoneWithAbbreviation:@"CST"];
+        } else if ([localTimeZone isEqual:[NSTimeZone timeZoneWithAbbreviation:@"PST"]]) {
+            timeZone = localTimeZone;
+        }
     }
     
     if (timeZone)
@@ -79,8 +89,10 @@ enum {
                 firstAired = [firstAired stringByAppendingFormat:@" %@", details.formattedAirtime];
             }
             
+            NSDate *firstAiredDate = [dateFormatter dateFromString:firstAired];
+            
             // Store the first air date on the TV series
-            [tvSeries setValue:[dateFormatter dateFromString:firstAired] forKey:@"firstAired"];
+            [tvSeries setValue:firstAiredDate forKey:@"firstAired"];
         }
         
         // Every season in the TV series
@@ -155,7 +167,10 @@ enum {
                  kTimeZoneMapNetworksKey : @[ @"dr1", @"dr2", @"tv2", @"svt", @"nrk" ] },
               @{ kTimeZoneMapTimeZoneKey : kTimeZoneAbbreviationGMT,
                  kTimeZoneMapTypeKey     : @(kTimeZoneMapAbbreviationType),
-                 kTimeZoneMapNetworksKey : @[ @"e4", @"itv1", @"channel 4", @"bbc" ] } ];
+                 kTimeZoneMapNetworksKey : @[ @"e4", @"itv1", @"channel 4", @"bbc" ] },
+              @{ kTimeZoneMapTimeZoneKey : kTimeZoneAbbreviationEST,
+                 kTimeZoneMapTypeKey     : @[ @"amc", @"fox", @"cbs", @"pbs", @"hbo", @"showtime", @"abc", @"cw", @"the cw"]
+                  }];
 }
 
 @end

@@ -438,6 +438,7 @@
 					"../CharlesTVDB/**",
 				);
 				INFOPLIST_FILE = "CharlesMacDemo/CharlesMacDemo-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
@@ -459,6 +460,7 @@
 					"../CharlesTVDB/**",
 				);
 				INFOPLIST_FILE = "CharlesMacDemo/CharlesMacDemo-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;

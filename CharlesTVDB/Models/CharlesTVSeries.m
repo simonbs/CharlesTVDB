@@ -45,15 +45,17 @@
     NSString *path = [NSString stringWithFormat:@"series/%li/all/%@.xml", (unsigned long)seriesId, [CharlesClient sharedClient].language];
     CharlesRequest *request = [CharlesRequest requestWithPath:path usingAPIKey:YES];
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        CharlesTVSeries *tvSeries = [[self class] tvSeriesModelFromDetailsXMLDocument:xmlDocument];
-        CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
-        [tvSeries setValue:details forKey:@"details"];
-        [tvSeries setValue:@(YES) forKey:@"detailsLoaded"];
-        
-        if (completion)
-        {
-            completion(tvSeries);
-        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
+            CharlesTVSeries *tvSeries = [[self class] tvSeriesModelFromDetailsXMLDocument:xmlDocument];
+            CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
+            [tvSeries setValue:details forKey:@"details"];
+            [tvSeries setValue:@(YES) forKey:@"detailsLoaded"];
+            
+            if (completion)
+            {
+                completion(tvSeries);
+            }
+        });
     } failure:^(NSError *error) {
         if (failure)
         {
