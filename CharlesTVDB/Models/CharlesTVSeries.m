@@ -81,8 +81,7 @@
     [request addQueryParameterWithValue:name forKey:@"seriesname"];
     [request addQueryParameterWithValue:[CharlesClient sharedClient].language forKey:@"language"];
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        if (completion)
-        {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
             NSArray *seriesElements = [xmlDocument.rootElement elementsForName:@"Series"];
             NSMutableArray *results = [NSMutableArray arrayWithCapacity:[seriesElements count]];
             for (DDXMLElement *element in seriesElements)
@@ -91,8 +90,13 @@
                 [results addObject:tvSeries];
             }
             
-            completion(results);
-        }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (completion)
+                {
+                    completion(results);
+                }
+            });
+        });
     } failure:^(NSError *error) {
         if (failure)
         {
