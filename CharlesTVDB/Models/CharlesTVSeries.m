@@ -52,7 +52,9 @@
             
             if (completion)
             {
-                completion(tvSeries);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(tvSeries);
+                });
             }
         });
     } failure:^(NSError *error) {
