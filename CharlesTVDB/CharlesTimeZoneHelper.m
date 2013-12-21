@@ -69,8 +69,10 @@ enum {
             if (details.formattedAirtime.length > 5)
             {
                 dateFormatter.dateFormat = @"yyyy-MM-dd h:mm a";
-            }
-            else
+            } else if (details.formattedAirtime.length < 5)
+            { // Some times dates are formatted like 12pm
+                dateFormatter.dateFormat = @"yyyy-MM-dd ha";
+            } else
             {
                 dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
             }
