@@ -13,7 +13,6 @@
 #import "CharlesClient.h"
 #import "CharlesArtwork.h"
 #import "CharlesTVSeriesDetails.h"
-
 #import <KissXML/DDXML.h>
 
 #define CharlesBannersBaseUrl @"http://www.thetvdb.com/banners/"
@@ -53,7 +52,9 @@
             
             if (completion)
             {
-                completion(tvSeries);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(tvSeries);
+                });
             }
         });
     } failure:^(NSError *error) {
@@ -80,8 +81,7 @@
     [request addQueryParameterWithValue:name forKey:@"seriesname"];
     [request addQueryParameterWithValue:[CharlesClient sharedClient].language forKey:@"language"];
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        if (completion)
-        {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
             NSArray *seriesElements = [xmlDocument.rootElement elementsForName:@"Series"];
             NSMutableArray *results = [NSMutableArray arrayWithCapacity:[seriesElements count]];
             for (DDXMLElement *element in seriesElements)
@@ -89,9 +89,14 @@
                 CharlesTVSeries *tvSeries = [self tvSeriesModelFromXMLElement:element];
                 [results addObject:tvSeries];
             }
-            
-            completion(results);
-        }
+
+            if (completion)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(results);
+                });
+            }
+        });
     } failure:^(NSError *error) {
         if (failure)
         {
@@ -111,14 +116,18 @@
     NSString *path = [NSString stringWithFormat:@"series/%@/all/%@.xml", self.identifier, [CharlesClient sharedClient].language];
     CharlesRequest *request = [CharlesRequest requestWithPath:path usingAPIKey:YES];
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
-        [self setValue:details forKey:@"details"];
-        [self setValue:@(YES) forKey:@"detailsLoaded"];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
+            CharlesTVSeriesDetails *details = [[self class] detailsFromXMLDocument:xmlDocument];
+            [self setValue:details forKey:@"details"];
+            [self setValue:@(YES) forKey:@"detailsLoaded"];
         
-        if (completion)
-        {
-            completion(YES, nil);
-        }
+            if (completion)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(YES, nil);
+                });
+            }
+        });
     } failure:^(NSError *error) {
         if (completion)
         {
@@ -144,18 +153,22 @@
         [request addQueryParameterWithValue:zap2itId forKey:@"zap2it"];
     }
     [request startWithCompletion:^(DDXMLDocument *xmlDocument) {
-        CharlesTVSeries *tvSeries = nil;
-        NSArray *seriesElements = [xmlDocument.rootElement elementsForName:@"Series"];
-        if ([seriesElements count] > 0)
-        {
-            DDXMLElement *element = [seriesElements objectAtIndex:0];
-            tvSeries = [self tvSeriesModelFromXMLElement:element];
-        }
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
+            CharlesTVSeries *tvSeries = nil;
+            NSArray *seriesElements = [xmlDocument.rootElement elementsForName:@"Series"];
+            if ([seriesElements count] > 0)
+            {
+                DDXMLElement *element = [seriesElements objectAtIndex:0];
+                tvSeries = [self tvSeriesModelFromXMLElement:element];
+            }
         
-        if (completion)
-        {
-            completion(tvSeries);
-        }
+            if (completion)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(tvSeries);
+                });
+            }
+        });
     } failure:^(NSError *error) {
         if (failure)
         {

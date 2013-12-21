@@ -35,7 +35,7 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFImageResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        UIImage *image = (UIImage *)responseObject;
+        CharlesImage *image = (CharlesImage *)responseObject;
         
         [self setValue:image forKey:@"image"];
         [self setValue:@(YES) forKey:@"loaded"];
